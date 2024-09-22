@@ -12,4 +12,3 @@ criar_interface(app)
 # Inicia o loop da aplicação
 app.mainloop()
 
-#ok
