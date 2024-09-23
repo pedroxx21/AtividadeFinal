@@ -3,7 +3,7 @@ import mysql.connector
 # Função para conectar ao banco de dados
 def conectar():
     conexao = mysql.connector.connect(
-        host="localhost",  # Altere se necessário
+        host="localhost",  
         user="admin",  # Usuário do MySQL
         password="123",  # Senha do MySQL
         database="sistema_educacional"  # Nome do banco de dados
