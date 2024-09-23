@@ -35,7 +35,7 @@ def criar_interface(app):
         frame.grid(row=0, column=0, sticky='nsew')
 
    
-    tk.Label(tela_login, image=logotipo).pack(pady=10)  # Adiciona o logotipo na tela de login
+    tk.Label(tela_login, image=logotipo).pack(pady=10)  
     tk.Label(tela_login, text="Tela de Login", font=("Arial", 16)).pack(pady=20)
     tk.Label(tela_login, text="Usuário").pack()
     entrada_usuario = tk.Entry(tela_login)
@@ -203,7 +203,7 @@ def criar_interface(app):
     # Botão Voltar
     tk.Button(tela_usuarios, text="Voltar", command=lambda: mudar_tela(tela_principal)).pack(pady=20)
 
-    # Atualizar lista de usuários ao entrar na tela
+    
     atualizar_lista_usuarios()
 
     # Tela de Matrículas
@@ -279,13 +279,13 @@ def criar_interface(app):
     # Botão Voltar
     tk.Button(tela_matriculas, text="Voltar", command=lambda: mudar_tela(tela_principal)).pack(pady=20)
 
-    # Atualizar lista de matrículas ao entrar na tela
+   
     atualizar_lista_matriculas()
 
     # Tela de Relatórios
     tk.Label(tela_relatorios, text="Relatórios", font=("Arial", 16)).pack(pady=20)
 
-# Frame para adicionar relatório
+
     frame_relatorio = tk.Frame(tela_relatorios)
     frame_relatorio.pack(pady=10)
 
@@ -296,7 +296,7 @@ def criar_interface(app):
     def adicionar_relatorio_interface():
         texto_relatorio = entrada_relatorio.get()
         if texto_relatorio:
-            adicionar_relatorio(texto_relatorio)  # Passa o texto como argumento
+            adicionar_relatorio(texto_relatorio)  
             atualizar_lista_relatorios()
             messagebox.showinfo("Sucesso", "Relatório adicionado com sucesso!")
         else:
@@ -319,7 +319,7 @@ def criar_interface(app):
         relatorios = listar_relatorios()
         lista_relatorios.delete(0, tk.END)
         for relatorio in relatorios:
-            lista_relatorios.insert(tk.END, relatorio[1])  # Supondo que relatorio[1] seja o texto do relatório
+            lista_relatorios.insert(tk.END, relatorio[1]) 
 
 # Botão para atualizar a lista
     tk.Button(frame_lista_relatorios, text="Atualizar Lista", command=atualizar_lista_relatorios).pack(pady=5)
@@ -327,7 +327,7 @@ def criar_interface(app):
 # Botão Voltar
     tk.Button(tela_relatorios, text="Voltar", command=lambda: mudar_tela(tela_principal)).pack(pady=20)
 
-# Atualizar lista de relatórios ao entrar na tela
+
     atualizar_lista_relatorios()
 
     # Tela de Configurações
@@ -344,7 +344,6 @@ def criar_interface(app):
     def alterar_senha():
         nova_senha = entrada_nova_senha.get()
         if nova_senha:
-            # Aqui você pode adicionar a lógica para alterar a senha no banco de dados
             messagebox.showinfo("Sucesso", "Senha alterada com sucesso!")
             entrada_nova_senha.delete(0, tk.END)
         else:
@@ -352,7 +351,7 @@ def criar_interface(app):
 
     tk.Button(frame_senha, text="Alterar Senha", command=alterar_senha).grid(row=0, column=2, padx=10, pady=5)
 
-# Alterar Tema (Simples)
+# Alterar Tema 
     frame_tema = tk.Frame(tela_configuracoes)
     frame_tema.pack(pady=10)
 
@@ -409,5 +408,5 @@ def criar_interface(app):
 
     tk.Button(tela_sobre, text="Voltar", command=lambda: mudar_tela(tela_principal)).pack(pady=20)
 
-    # Mostrar a tela de login no início
+    
     mudar_tela(tela_login)
